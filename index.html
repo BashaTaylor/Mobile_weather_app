@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather">
+            <div class="city">
+                <div class="city-search">
+                    <h1>Weather App</h1>
+                    <div class="city-search1">
+                        <input type="text" id="locationInput" placeholder="Enter city">
+                        <button id="searchButton" type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="main-temperature">
+                <div class="temperature-container">
+                    <div class="temp1">
+                        <h1 id="location"></h1>
+                    </div>
+                    <div class="weather-icon-container">
+                        <img id="weatherIcon" alt="Weather Icon">
+                    </div>
+                    <p id="temperature"></p>
+                    <div class="temp3">
+                        <p id="dayTemperature"></p>
+                        <p id="nightTemperature"></p>
+                    </div>
+                </div>
+                <div class="weather-info">
+                    <p id="time"></p>
+                    <p id="description"></p>
+                    <p id="humidity"></p>
+                    <p id="wind"></p>
+                    <p id="precipitation"></p>
+                    <p id="geolocation"></p>
+                </div>
+            </div>
+            <p id="forecast" class="forecast-container">Five day forecast</p>
+        </div>
+        <footer class="footer">
+            <p id="copy_right">&copy; 2024 Created by Barbara Taylor</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
