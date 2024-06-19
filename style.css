@@ -1,0 +1,71 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(237, 244, 250);
+    margin: 0;
+}
+
+.container {
+    max-width: 100%; /* Adjusted for responsiveness */
+    padding: 20px;
+}
+
+.weather {
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.7);
+    padding: 20px;
+}
+
+.weather-info {
+    padding-top: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .weather {
+        padding: 15px;
+    }
+
+    .main-temperature {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .weather-info {
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .forecast-container {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        justify-content: center;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+
+    .weather {
+        padding: 10px;
+    }
+
+    .weather-info {
+        padding-top: 15px;
+    }
+
+    .main-temperature {
+        gap: 5px;
+    }
+}
+
+/* Adjust other styles as needed for mobile devices */
