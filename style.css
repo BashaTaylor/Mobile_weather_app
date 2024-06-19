@@ -1,71 +1,65 @@
 /* General styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(237, 244, 250);
+    background-image: url('html_fileimages/pexels-photo-1198839.webp');
+    background-size: cover;
+    background-position: center;
     margin: 0;
 }
 
 .container {
     max-width: 100%; /* Adjusted for responsiveness */
     padding: 20px;
+    display: grid; /* Change to grid layout */
+    gap: 20px; /* Gap between grid items */
+    grid-template-columns: 1fr; /* Single column layout for mobile */
 }
 
 .weather {
-    background-size: cover;
-    background-position: center;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.7);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
     padding: 20px;
+}
+
+.main-temperature {
+    display: grid; /* Use grid for temperature section */
+    gap: 10px;
 }
 
 .weather-info {
     padding-top: 20px;
 }
 
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.forecast-item {
+    background-color: rgba(36, 36, 237, 0.791);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 /* Media queries for responsiveness */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .container {
-        padding: 10px;
-    }
-
-    .weather {
-        padding: 15px;
+        grid-template-columns: repeat(2, 1fr); /* Two-column grid layout */
     }
 
     .main-temperature {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .weather-info {
-        padding-top: 20px;
-        text-align: center;
-    }
-
-    .forecast-container {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-        justify-content: center;
-        gap: 5px;
+        gap: 20px;
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 1024px) {
     .container {
-        padding: 5px;
-    }
-
-    .weather {
-        padding: 10px;
-    }
-
-    .weather-info {
-        padding-top: 15px;
-    }
-
-    .main-temperature {
-        gap: 5px;
+        grid-template-columns: repeat(3, 1fr); /* Three-column grid layout */
     }
 }
-
-/* Adjust other styles as needed for mobile devices */
