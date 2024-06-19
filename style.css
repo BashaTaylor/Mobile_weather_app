@@ -63,3 +63,7 @@ body {
         grid-template-columns: repeat(3, 1fr); /* Three-column grid layout */
     }
 }
+
+#description::first-letter {
+    text-transform: uppercase;
+}
