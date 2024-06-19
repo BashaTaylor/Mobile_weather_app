@@ -31,6 +31,10 @@ body {
     padding-top: 20px;
 }
 
+#description::first-letter {
+    text-transform: uppercase;
+}
+
 .forecast-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -62,8 +66,4 @@ body {
     .container {
         grid-template-columns: repeat(3, 1fr); /* Three-column grid layout */
     }
-}
-
-#description::first-letter {
-    text-transform: uppercase;
 }
