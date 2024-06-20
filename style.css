@@ -28,7 +28,7 @@ body {
     grid-template-columns: auto; /* Single column layout */
     grid-template-rows: repeat(3, auto); /* Three rows */
     gap: 20px; /* Gap between grid items */
-    margin-top: 20px; /* Adjust margin as needed */
+    
 }
 
 .city {
@@ -119,7 +119,6 @@ body {
 .forecast-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
     padding-top: 10px;
 }
 
