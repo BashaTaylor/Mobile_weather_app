@@ -20,7 +20,7 @@ body {
     background-repeat: no-repeat; /* Prevents the background image from repeating */
     border-radius: 15px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
-    padding: 20px;
+    gap: 25px;
 }
 
 .main-temperature {
