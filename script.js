@@ -11,6 +11,7 @@ const humidityElement = document.getElementById('humidity');
 const timeElement = document.getElementById('time');
 const forecastElement = document.getElementById('forecast');
 const weatherIconElement = document.getElementById('weatherIcon');
+const weatherIconContainer = document.querySelector('.weather-icon-container');
 const windElement = document.getElementById('wind');
 const precipitationElement = document.getElementById('precipitation');
 
@@ -21,7 +22,6 @@ searchButton.addEventListener('click', () => {
         fetchForecast(location); // Pass location (city) to fetchForecast function
     }
 });
-
 
 function fetchWeather(location) {
     const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=imperial`;
@@ -48,14 +48,17 @@ function fetchWeather(location) {
                 precipitationPercentage = 30;
             }
             precipitationElement.textContent = `Precipitation: ${precipitationPercentage}%`;
-            
+
             // Set weather icon
             const weatherIcon = data.weather[0].icon;
             const iconUrl = `https://openweathermap.org/img/wn/${weatherIcon}.png`;
             weatherIconElement.src = iconUrl;
             weatherIconElement.alt = 'Weather Icon'; // Set alt text here
-            // Add class to indicate loaded state
-            weatherIconElement.parentNode.classList.add('loaded');
+            
+            // Show weather icon after loading
+            weatherIconContainer.classList.add('loaded');
+            weatherIconContainer.classList.remove('loading');
+
             // Format and display current time
             const currentTime = new Date(data.dt * 1000);
             const options = { weekday: 'long', hour: 'numeric', minute: 'numeric' };
@@ -64,6 +67,7 @@ function fetchWeather(location) {
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
+            weatherIconContainer.classList.remove('loading'); // Ensure to remove loading state on error
         });
 }
 
@@ -107,6 +111,7 @@ function fetchForecast(location) {
             console.error('Error fetching forecast data:', error);
         });
 }
+
 function addForecastItem(data) {
     const forecastItem = document.createElement('div');
     forecastItem.classList.add('forecast-item');
@@ -118,4 +123,3 @@ function addForecastItem(data) {
     `;
     forecastElement.appendChild(forecastItem);
 }
-

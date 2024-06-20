@@ -1,9 +1,7 @@
 /* General styles */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('html_fileimages/pexels-photo-1198839.webp');
-    background-size: cover;
-    background-position: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Adjust background color */
     margin: 0;
 }
 
@@ -16,19 +14,102 @@ body {
 }
 
 .weather {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-image: url('html_fileimages/pexels-photo-358358.jpeg');
+    background-size: cover; /* Adjusts the background image to cover the entire container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
     border-radius: 15px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
     padding: 20px;
 }
 
 .main-temperature {
-    display: grid; /* Use grid for temperature section */
-    gap: 10px;
+    display: grid;
+    grid-template-columns: auto; /* Single column layout */
+    grid-template-rows: repeat(3, auto); /* Three rows */
+    gap: 20px; /* Gap between grid items */
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.city {
+    grid-row: 1 / span 1; /* City div spans 1 row */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-image: url('html_fileimages/pexels-photo-1430677.jpeg');
+    background-size: cover; /* Adjusts the background image to cover the entire container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+}
+
+.city-search1 {
+    margin-bottom: 20px;
+}
+
+#locationInput {
+    border-radius: 15px;
+    box-shadow: 0 5px 10px 0 #00000070;
+    padding: 10px;
+    margin: 15px;
+    background-color: rgba(0, 0, 255, 0.843);
+    color: white;
+}
+
+#locationInput::placeholder {
+    color: white;
+}
+
+#searchButton {
+    border-radius: 15px;
+    box-shadow: 0 5px 10px 0 #00000070;
+    padding: 10px;
+    margin: 15px;
+    background-color: rgba(0, 0, 255, 0.843);
+    color: white;
+}
+
+.temperature-container {
+    grid-row: 2 / span 1; /* Temperature container spans 1 row */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-image: url('html_fileimages/pexels-photo-3601437.webp');
+    background-size: cover; /* Adjusts the background image to cover the entire container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
 }
 
 .weather-info {
-    padding-top: 20px;
+    grid-row: 3 / span 1; /* Weather info spans 1 row */
+    border-radius: 10px; /* Ensure border-radius is applied */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-image: url('html_fileimages/pexels-photo-1198839.webp');
+    background-size: cover; /* Adjusts the background image to cover the entire container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+}
+
+.weather-icon-container {
+    position: relative; /* Ensure container is positioned */
+}
+
+.weather-icon-container #weatherIcon {
+    display: none; /* Initially hide weather icon */
+}
+
+.weather-icon-container.loaded #weatherIcon {
+    display: block; /* Show weather icon after loading */
+}
+
+.weather-icon-container.loading::after {
+    content: 'Loading...'; /* Optional loading text */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.2em;
 }
 
 #description::first-letter {
@@ -43,7 +124,7 @@ body {
 }
 
 .forecast-item {
-    background-color: rgba(36, 36, 237, 0.791);
+    background-color: rgba(36, 36, 237, 0.697);
     color: white;
     text-align: center;
     padding: 10px;
