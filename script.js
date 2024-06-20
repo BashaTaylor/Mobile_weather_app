@@ -14,12 +14,14 @@ const weatherIconElement = document.getElementById('weatherIcon');
 const weatherIconContainer = document.querySelector('.weather-icon-container');
 const windElement = document.getElementById('wind');
 const precipitationElement = document.getElementById('precipitation');
+const dateElement = document.getElementById('date'); // Add date element
 
 searchButton.addEventListener('click', () => {
     const location = locationInput.value;
     if (location) {
         fetchWeather(location); // Pass location (city) to fetchWeather function
         fetchForecast(location); // Pass location (city) to fetchForecast function
+        weatherIconContainer.classList.add('loading'); // Show loading state
     }
 });
 
@@ -64,6 +66,8 @@ function fetchWeather(location) {
             const options = { weekday: 'long', hour: 'numeric', minute: 'numeric' };
             const formattedTime = new Intl.DateTimeFormat('en-US', options).format(currentTime);
             timeElement.textContent = `${formattedTime}`;
+            // Add current date
+            dateElement.textContent = getCurrentDate();
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
